@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function NotFound() {
 	return (<section className='grid grid-cols-1 gap-2  justify-items-center p-12'>
-		<h1 className='text-pink-500 text-4xl'>Whoops, sorry about that. We can't find that page...</h1>
+		<h1 className='text-pink-500 text-4xl'>Whoops, sorry about that. We can&apos;t find that page...</h1>
 		<div style={{ width: '128px', height: 'auto' }}>
 			<Image style={{ width: '128px', height: 'auto' }} src="/images/fairy/strawberry-fairy-removebg-preview.png" height={72} width={128} alt="strawberry tree fairy " className='floating' />
 		</div>
