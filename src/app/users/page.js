@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import RenderUsers from './userList';
 
 async function GetUsers() {
@@ -24,8 +25,11 @@ export default async function Page() {
 			<hr className='mb-4'></hr>
 			{typeof users == "null" || users.length === 0 ? <span>
 					Unfortunately, there are no users who tried the experience yet.<a href='/' className='text-pink-500'> Try out the experience now!</a>
-				</span>	:
-				<RenderUsers users={users} /> 
+			</span> :
+				<div>
+					<Image src="/images/fairy/strawberry-fairy-removebg-preview.png" height={48} width={48} />
+					<RenderUsers users={users} /> 
+				</div>
 		}
 		</section>
 	)

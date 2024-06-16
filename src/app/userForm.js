@@ -1,12 +1,22 @@
 "use client"
 
 import { useRouter } from 'next/navigation';
-import countries from './data/countries';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function UserForm() {
 	const input_styling = 'p-2 rounded-md text-black';
 	const [error, setError] = useState(null);
+	const [countries, setCountries] = useState([]);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const response = await fetch('/countries.json'); // Assuming the JSON file is in the /public directory
+			const countryList = await response.json();
+			setCountries(countryList);
+		};
+
+		fetchData();
+	}, []);
 
 	const router = useRouter();
 
@@ -42,7 +52,7 @@ export default function UserForm() {
 					Reality To Myth
 				</h1>
 				<hr className='bg-white ' />
-				<div className='border border-white grid grid-cols-1 gap-2 px-2 py-4'>
+				<div className='border border-white grid grid-cols-1 gap-2 px-2 py-4 w-md'>
 
 					<label htmlFor="fullName" >Please enter your full name</label>
 					<input type="text" id="fullName" name="fullName" placeholder='Enter your full name please' className={input_styling} required />
