@@ -1,17 +1,9 @@
 "use client"
 
 import ReactMapGL, { Marker } from "react-map-gl";
-import { useState } from 'react';
 import Image from 'next/image';
 
-export default function Map({ locations }) {
-	const [viewport, setViewport] = useState({
-		latitude: 41.4545, // Faf's latitude
-		longitude: -8.1889, // Faf's longitude
-		zoom: 6, // Default zoom level
-		width: "100vw",
-		height: "100vh"
-	});
+export default function Map({viewport, setViewport, locations }) {
 
 
 	const handleOnClick = () => {
