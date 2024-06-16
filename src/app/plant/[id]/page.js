@@ -33,7 +33,7 @@ export default function Page(id) {
 					</p>
 
 					<p className='text-sm py-2'>
-						Although there isn't a well-known collection of myths about it, the Strawberry Tree has repeatedly appeared in folklore. For instance, the Ancient Greek god Hermes is said to have been born under an arbutus tree (though the exact species is not specified). Hermes was one of the Twelve goods who lived in Olympus. He watched over messengers and heralds and was connected with travelers, thieves, shepherds, and mystery cults. He was the one who relayed the souls of the dead to the Underworld. Another curiosity about it is that the image of a bear standing upright to eat fruit from a Strawberry Tree has long been associated with the city of Madrid.
+						Although there isn&apos;t a well-known collection of myths about it, the Strawberry Tree has repeatedly appeared in folklore. For instance, the Ancient Greek god Hermes is said to have been born under an arbutus tree (though the exact species is not specified). Hermes was one of the Twelve goods who lived in Olympus. He watched over messengers and heralds and was connected with travelers, thieves, shepherds, and mystery cults. He was the one who relayed the souls of the dead to the Underworld. Another curiosity about it is that the image of a bear standing upright to eat fruit from a Strawberry Tree has long been associated with the city of Madrid.
 						<cite target='_blank' className='italic ml-2'>
 							(Kapach, 2023)
 						</cite>

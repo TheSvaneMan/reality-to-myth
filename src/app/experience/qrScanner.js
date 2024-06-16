@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from "react";
 import QrScanner from "qr-scanner";
 import { useRouter } from 'next/navigation';
 
+import Image from 'next/image';
+
 const QrReader = () => {
 	// QR States
 	const scanner = useRef();
@@ -36,9 +38,10 @@ const QrReader = () => {
 	const router = useRouter();
 
 	useEffect(() => {
-		if (videoEl?.current && !scanner.current) {
+		const videoElement = videoEl?.current;
+		if (videoElement && !scanner.current) {
 			// 👉 Instantiate the QR Scanner
-			scanner.current = new QrScanner(videoEl?.current, onScanSuccess, {
+			scanner.current = new QrScanner(videoElement, onScanSuccess, {
 				onDecodeError: onScanFail,
 				// 📷 This is the camera facing mode. In mobile devices, "environment" means back camera and "user" means front camera.
 				preferredCamera: "environment",
@@ -62,7 +65,7 @@ const QrReader = () => {
 		// 🧹 Clean up on unmount.
 		// 🚨 This removes the QR Scanner from rendering and using camera when it is closed or removed from the UI.
 		return () => {
-			if (!videoEl?.current) {
+			if (!videoElement) {
 				scanner?.current?.stop();
 			}
 		};
@@ -106,9 +109,9 @@ const QrReader = () => {
 				<video ref={videoEl} className='h-[80px]'></video>
 
 				<div ref={qrBoxEl} className="qr-box">
-					<img
-						src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F000%2F406%2F024%2Foriginal%2Fvector-qr-code-illustration.jpg&f=1&nofb=1&ipt=eaff706c84c6b450eefc656ee6fde7d40a251cd554e7fb0faa9803be5cf8a12b&ipo=images"
-						alt="Qr Frame"
+					<Image
+						src="/images/qr_code/vector-qr-code-illustration.jpg"
+						alt="QR Frame"
 						width={240}
 						height={240}
 						className="qr-frame opacity-25"
