@@ -37,9 +37,7 @@ export default function Page(id) {
 						<cite target='_blank' className='italic ml-2'>
 							(Kapach, 2023)
 						</cite>
-						<hr className='mt-8' />
 					</p>
-
 				</div>
 				<div className='grid grid-cols-1 gap-2 p-4 text-sm'>
 					<h5 className='font-bold'>

@@ -51,8 +51,8 @@ export default function Page() {
 	const handleLocationSelection = (location) => {
 		setSelectedLocation(location)
 		setViewport({
-			latitude: location.latitude, 
-			longitude: location.longitude, 
+			latitude: location.latitude,
+			longitude: location.longitude,
 			zoom: 6, // Default zoom level
 			width: "100vw",
 			height: "100vh"
@@ -60,10 +60,11 @@ export default function Page() {
 	}
 	return (
 		<section className='min-h-screen w-screen'>
-			<div className='h-[480px]'>
-				<Map viewport={viewport} setViewport={setViewport} locations={locations}  />
-			</div>
-			<section className=' w-screen'>
+			<section className=' w-screen mb-8'>
+
+				<h1 className='p-4'>
+					Select a country to empathize further with fellow <a href='/users' className='text-orange-600'>participants</a> ..
+				</h1>
 				<ul className='bg-[#355835] text-white w-screen grid grid-cols-1 gap-4 py-4 justify-items-center'>
 					{
 						locations.map((location, i) => {
@@ -76,18 +77,14 @@ export default function Page() {
 						})
 					}
 				</ul>
-				<div className='grid grid-cols-2 gap-2 p-4'>
-					<p>
-						<span className='text-orange-600'>
-							{selectedLocation.partipantsCount}
-						</span> {selectedLocation.partipantsCount == 0 && 'people'} {selectedLocation.partipantsCount == 1 && 'person'} {selectedLocation.partipantsCount > 1 && 'people'} from <span className='text-orange-600'>
-							{selectedLocation.country}
-						</span> took part in the experience!
-					</p>
-				
-					
-				</div>
-				<hr className='text-black my-4 mx-4' />
+				<p className='m-0 flex-wrap p-4'>
+					<span className='text-orange-600'>
+						{selectedLocation.partipantsCount}
+					</span> {selectedLocation.partipantsCount == 0 && 'people'} {selectedLocation.partipantsCount == 1 && 'person'} {selectedLocation.partipantsCount > 1 && 'people'} from <span className='text-orange-600'>
+						{selectedLocation.country}
+					</span> took part in the experience!
+				</p>
+				<hr className='text-black mb-4 mx-4' />
 				<p className='italic px-4'>
 					Did you know, that the national plant of <span className='text-orange-600'>
 						{selectedLocation.country}
@@ -96,7 +93,11 @@ export default function Page() {
 					</a>
 				</p>
 			</section>
-			
+			<div className='h-[480px]'>
+				<Map viewport={viewport} setViewport={setViewport} locations={locations} />
+			</div>
+
+
 		</section>
 	)
 }

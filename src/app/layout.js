@@ -26,15 +26,24 @@ export default function RootLayout({ children }) {
           </main>
         </section>
 
-        <footer className='bg-[#355835] h-[240px] w-screen grid grid-cols-1 text-white p-8  sm:grid-cols-3 gap-4'>
+        <footer className='bg-[#355835]  w-screen grid grid-cols-1 text-white p-8  sm:grid-cols-3 gap-4'>
           <div>
-            <a href="/references">References</a>
+            <a href="/">Home</a>
           </div>
           <div>
-            <a href="/research">Research</a>
+            <a href="/experience">Experience</a>
+          </div>
+          <div>
+            <a href="/plant/1">Sample</a>
           </div>
           <div>
             <a href="/about">About</a>
+          </div>
+          <div>
+            <a href="/map">Map</a>
+          </div>
+          <div>
+            <a href="/users">Users</a>
           </div>
         </footer>
       </body>
