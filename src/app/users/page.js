@@ -2,9 +2,9 @@ import Image from 'next/image';
 import RenderUsers from './userList';
 
 async function getData() {
-	const res = await fetch('http://localhost:4200/api/users', {
+	const res = await fetch('https://magpie-famous-roughly.ngrok-free.app/api/users', {
 		method: "GET",
-	cache: 'no-store'
+		cache: 'no-store'
 	})
 	// The return value is *not* serialized
 	// You can return Date, Map, Set, etc.
@@ -26,19 +26,21 @@ export default async function Page() {
 			</h1>
 			<hr className='mb-4'></hr>
 			{typeof users == "null" || users.length === 0 ? <span>
-					Unfortunately, there are no users who tried the experience yet.<a href='/' className='text-pink-500'> Try out the experience now!</a>
+				Unfortunately, there are no users who tried the experience yet.<a href='/' className='text-pink-500'> Try out the experience now!</a>
 			</span> :
 				<div>
-					<RenderUsers users={users} /> 
+					<RenderUsers users={users} />
 					<div className='grid grid-cols-1 gap-2'>
 						<hr className='my-4' />
 						<h3 className='mb-4 text-pink-500 text-xl' >
 							🍓🍓🍓 Thank you so much for joining the adventure! 🍓🍓🍓
 						</h3>
-						<Image src="/images/fairy/strawberry-fairy-removebg-preview.png" height={72} width={128} alt="strawberry tree fairy " className='floating'/>
+
+						<div style={{ width: '300px', height: '200px' }}>
+							<Image style={{ width: '128px', height: 'auto' }} src="/images/fairy/strawberry-fairy-removebg-preview.png" height={72} width={128} alt="strawberry tree fairy " className='floating' /></div>
 					</div>
 				</div>
-		}
+			}
 		</section>
 	)
 }

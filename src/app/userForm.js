@@ -26,7 +26,7 @@ export default function UserForm() {
 		try {
 
 			const formData = new FormData(event.currentTarget)
-			const response = await fetch('http://localhost:4200/api/users', {
+			const response = await fetch('https://magpie-famous-roughly.ngrok-free.app/api/users', {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
