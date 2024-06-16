@@ -29,8 +29,8 @@ export default function RenderUsers({users}) {
 				users.map((user, i) => {
 					const formattedDate = formatDate(user.createdDate)
 					return (
-						<li key={user.fullName + i} >
-							<span className='text-pink-500'>{user.fullName}</span> from  <span className='text-pink-500'>{user.country}</span>, who joined the adventure on the <span className='text-pink-500'>{formattedDate} </span>
+						<li key={user.fullName + i} className='italic' >
+							<span className='text-pink-500 font-bold'>{user.fullName}</span> from  <span className='text-pink-500'>{user.country}</span>, who joined the adventure on the <span className='text-pink-500'>{formattedDate} </span>
 						</li>
 					)
 				})
